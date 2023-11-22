@@ -1,5 +1,3 @@
-'use client'
-
 import { AiOutlineSearch } from "react-icons/ai"
 
 export default function SearchBar({pathName, router, searchQuery, setSearchQuery, setShowSearchBar}) {

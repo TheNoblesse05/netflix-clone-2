@@ -1,11 +1,22 @@
-'use client'
-
+import Banner from "../banner/page"
+import MediaRow from "../media-row/page"
 import NavBar from "../navbar/page"
 
-export default function CommonLayout() {
-    return(
+export default function CommonLayout({ mediaData }) {
+    console.log(mediaData)
+    return (
         <>
-        <NavBar/>
+            <NavBar />
+            <Banner medias={mediaData} />
+            <div className="relative pl-4 pb-24 lg:space-y-24">
+                <section className="md:space-y-16">
+                    {
+                        mediaData && mediaData.length ?
+                            mediaData.map((item) => <MediaRow title={item.title} medias={item.medias} />)
+                            : <div>byeee</div>
+                    }
+                </section>
+            </div>
         </>
     )
 }
