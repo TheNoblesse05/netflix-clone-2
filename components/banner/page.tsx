@@ -1,9 +1,15 @@
+'use client'
+
 import Image from "next/image"
 import data from "@/movie_data/banner_movies.json"
 import { AiFillPlayCircle } from "react-icons/ai"
 import { IoMdInformationCircleOutline } from "react-icons/io"
+import { useRouter } from "next/navigation";
 
 export default function Banner() {
+
+    const router = useRouter()
+
     const medias = data
     const createMediaData = medias && medias.length ? medias[Math.floor(Math.random() * medias.length)] : null
     console.log('1,', createMediaData?.['thumbnailUrl'])
@@ -21,8 +27,9 @@ export default function Banner() {
                 {createMediaData?.description}
             </p>
             <div className="flex space-x-3">
-                <button className="cursor-pointer flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl bg-white text-black">
-                    <AiFillPlayCircle className="h-4 w-4 text-black md:h-7 md:w-7 cursor-pointer" />
+                <button className="cursor-pointer flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl bg-white text-black"
+                onClick={()=>router.push(`/watch/${createMediaData?.title}`)}>
+                    <AiFillPlayCircle className="h-4 w-4 text-black md:h-7 md:w-7 cursor-pointer"  />
                     Play
                 </button>
                 <button className="cursor-pointer flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl bg-[gray]/70 text-black">
