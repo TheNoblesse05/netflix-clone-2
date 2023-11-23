@@ -43,40 +43,44 @@ export default function NavBar() {
                 {/* logo and routes */}
                 <div className="flex items-center space-x-2 md:space-x-10">
                     <img src="https://rb.gy/ulxxee"
-                    alt="Netflix Icon"
-                    width={120}
-                    height={120}
-                    className="cursor-pointer object-contain"
-                    onClick={() => { router.push('/browse') }}
+                        alt="Netflix Icon"
+                        width={120}
+                        height={120}
+                        className="cursor-pointer object-contain"
+                        onClick={() => { router.push('/browse') }}
                     />
                     <ul className="md:space-x-4 md:flex cursor-pointer">
                         {
                             navItems.map(item => <li
-                                                    className="cursor-pointer text-[16px] font-light text-[#e5e5e5] transition duration-[.4s] mx-0.5 hover:text-[#b3b3b3]"
-                                                    key={item.id}
-                                                    onClick={()=>{router.push(item.path)}}>
-                                                        {item.title}
-                                                </li>)
+                                className="cursor-pointer text-[16px] font-light text-[#e5e5e5] transition duration-[.4s] mx-0.5 hover:text-[#b3b3b3]"
+                                key={item.id}
+                                onClick={() => {
+                                    router.push(item.path)
+                                    setSearchQuery('')
+                                    setShowSearchBar(false)
+                                }}>
+                                {item.title}
+                            </li>)
                         }
                     </ul>
                 </div>
                 {/* search and user icon */}
                 <div className="font-light flex items-center space-x-4 text-sm">
                     {
-                        showSearchBar ? 
-                            <SearchBar 
-                                pathName = {pathName}
-                                router = {router}
-                                searchQuery = {searchQuery}
-                                setSearchQuery = {setSearchQuery}
-                                setShowSearchBar = {setShowSearchBar}
-                            /> : 
-                            <AiOutlineSearch 
-                                onClick={()=>{setShowSearchBar(true)}}
+                        showSearchBar ?
+                            <SearchBar
+                                pathName={pathName}
+                                router={router}
+                                searchQuery={searchQuery}
+                                setSearchQuery={setSearchQuery}
+                                setShowSearchBar={setShowSearchBar}
+                            /> :
+                            <AiOutlineSearch
+                                onClick={() => { setShowSearchBar(true) }}
                                 className="sm:inline sm:w-6 sm:h-6 cursor-pointer" />
                     }
                     <div className="flex gap-2 items-center cursor-pointer">
-                        <img 
+                        <img
                             src="https://occ-0-2611-3663.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABfNXUMVXGhnCZwPI1SghnGpmUgqS_J-owMff-jig42xPF7vozQS1ge5xTgPTzH7ttfNYQXnsYs4vrMBaadh4E6RTJMVepojWqOXx.png?r=1d4"
                             alt="Current Profile"
                             className="rounded max-w-[30px] min-w-[20px] max-h-[30px] min-h-[20px]" />

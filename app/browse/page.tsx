@@ -12,23 +12,23 @@ export default function Browse() {
         },
         {
             'title': 'Popular TV Shows',
-            'medias': ['1', '2', '3', '4']
+            'medias': data
         },
         {
             'title': 'Top Rated TV Shows',
-            'medias': ['1', '2', '3', '4']
+            'medias': data
         },
         {
             'title': 'Trending Movies',
-            'medias': ['1', '2', '3', '4']
+            'medias': data
         },
         {
             'title': 'Popular Moives Shows',
-            'medias': ['1', '2', '3', '4']
+            'medias': data
         },
         {
             'title': 'Top Rated Movies',
-            'medias': ['1', '2', '3', '4']
+            'medias': data
         },
     ]
 

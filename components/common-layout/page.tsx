@@ -12,7 +12,7 @@ export default function CommonLayout({ mediaData }) {
                     {
                         mediaData && mediaData.length ?
                             mediaData.map((item) => <MediaRow title={item.title} medias={item.medias} />)
-                            : <div>byeee</div>
+                            : null
                     }
                 </section>
             </div>
