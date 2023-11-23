@@ -1,14 +1,14 @@
 import FetchMovies from "@/api/fetchMovies"
 import CommonLayout from "@/components/common-layout/page"
 import { useEffect } from "react"
-import data from "@/movie_data/movies.json"
+import data from "@/movie_data/card_movies.json"
 
 export default function Browse() {
 
     const mediaData = [
         {
             'title': 'Trending TV Shows',
-            'medias': ['1', '2', '3', '4'] //JSON.stringify(data)
+            'medias': data
         },
         {
             'title': 'Popular TV Shows',
@@ -32,11 +32,11 @@ export default function Browse() {
         },
     ]
 
-    mediaData.forEach(media=>FetchMovies().then(data=>
-        media['medias'] = data
-    ))
+    // mediaData.forEach(media=>FetchMovies().then(data=>
+    //     media['medias'] = data
+    // ))
 
-    // console.log(mediaData)
+    console.log('++',data.length)
 
     return (
         <main className="flex min-h-screen flex-col">

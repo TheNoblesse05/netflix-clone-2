@@ -3,11 +3,10 @@ import MediaRow from "../media-row/page"
 import NavBar from "../navbar/page"
 
 export default function CommonLayout({ mediaData }) {
-    console.log(mediaData)
     return (
         <>
             <NavBar />
-            <Banner medias={mediaData} />
+            <Banner />
             <div className="relative pl-4 pb-24 lg:space-y-24">
                 <section className="md:space-y-16">
                     {

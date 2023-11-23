@@ -1,5 +1,7 @@
-export default function MediaItem() {
+export default function MediaItem({title, media}) {
     return(
-        <div>Media Item</div>
+        <div>
+            {media['title']}
+        </div>
     )
 }
