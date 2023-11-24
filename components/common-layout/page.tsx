@@ -11,7 +11,7 @@ export default function CommonLayout({ mediaData }) {
                 <section className="md:space-y-16">
                     {
                         mediaData && mediaData.length ?
-                            mediaData.map((item) => <MediaRow title={item.title} medias={item.medias} />)
+                            mediaData.map((item) => <MediaRow key={item.title} title={item.title} medias={item.medias} />)
                             : null
                     }
                 </section>

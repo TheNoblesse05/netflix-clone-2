@@ -10,7 +10,7 @@ export default function MediaRow({ title, medias }) {
                 <div className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
                     {
                         medias && medias.length ?
-                            medias.map(item => <MediaItem title={title} media={item} />) : null
+                            medias.map(item => <MediaItem key={title} title={title} media={item} />) : null
                     }
                 </div>
             </div>
