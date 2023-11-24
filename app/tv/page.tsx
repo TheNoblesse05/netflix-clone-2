@@ -1,5 +1,3 @@
-'use client'
-
 import CommonLayout from "@/components/common-layout/page";
 import { useEffect } from "react";
 

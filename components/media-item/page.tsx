@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 
-export default function MediaItem({ title, media }) {
+export default function MediaItem({ title, media }:any) {
 
     const router = useRouter()
 

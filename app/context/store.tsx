@@ -1,9 +1,14 @@
 'use client'
 
-import { createContext } from "react"
+import { ReactNode, createContext } from "react"
 
 export const GlobalContext = createContext(null)
 
-export default function GlobalState({children}) {
-    return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>
+interface Props {
+    children?: ReactNode
+    // any props that come into the component
+}
+
+export default function GlobalState({children}:Props) {
+    return <GlobalContext.Provider value={null}>{children}</GlobalContext.Provider>
 }

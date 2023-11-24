@@ -1,6 +1,6 @@
 import { AiOutlineSearch } from "react-icons/ai"
 
-export default function SearchBar({pathName, router, searchQuery, setSearchQuery, setShowSearchBar}) {
+export default function SearchBar({pathName, router, searchQuery, setSearchQuery, setShowSearchBar}:any) {
     return <div className="md:flex justify-center items-center text-center">
         <div className="bg-[rgba(0,0,0,0.75)] border border-[hsla(0,0%,100%,0.85)] px-4 items-center text-center flex">
             <div className="order-2">

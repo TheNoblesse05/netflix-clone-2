@@ -12,7 +12,6 @@ export default function Watch() {
 
     const params = useParams()
     const paramsUrl = params.title[0].replace(/%20/g, " ")
-    console.log(paramsUrl)
     let videoUrl = ''
 
     // Ideally you'd want to pass the ID of the movie and search that ID in the DB to get the movie URL
@@ -24,8 +23,6 @@ export default function Watch() {
         if (paramsUrl === movie.title)
             videoUrl = movie.videoUrl || ''
     })
-
-    console.log(videoUrl)
 
     return (
         <div>

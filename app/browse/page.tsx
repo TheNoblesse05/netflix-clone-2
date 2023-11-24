@@ -36,8 +36,6 @@ export default function Browse() {
     //     media['medias'] = data
     // ))
 
-    console.log('++',data.length)
-
     return (
         <main className="flex min-h-screen flex-col">
             <CommonLayout mediaData={mediaData} />

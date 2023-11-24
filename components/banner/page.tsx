@@ -12,12 +12,11 @@ export default function Banner() {
 
     const medias = data
     const createMediaData = medias && medias.length ? medias[Math.floor(Math.random() * medias.length)] : null
-    console.log('1,', createMediaData?.['thumbnailUrl'])
-    // const src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/KansasSaloonSmashers1901.jpg/320px-KansasSaloonSmashers1901.jpg'
+    
     return (
         <div className="flex flex-col mb-28 space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12 lg:pl-24">
             <div className="absolute top-0 left-0 h-[95vh] w-screen -z-10">
-                <Image src={createMediaData?.thumbnailUrl} alt="Banner" fill style={{objectFit:"cover"}} />
+                <Image src={createMediaData?.thumbnailUrl || ''} alt="Banner" fill style={{objectFit:"cover"}} />
                 <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20" />
             </div>
             <h1 className="text-2x-l md:text-4xl lg:text-7xl font-bold">
